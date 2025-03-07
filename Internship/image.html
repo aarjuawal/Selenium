@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showDetails(book) {
+            let bookauthor =
+                book.dataset.bookAuthor;
+            alert(
+                book.textContent +
+                " is written by " +
+                bookauthor +
+                "."
+            );
+        }
+    </script>
+</head>
+<body>
+    <h1>Books</h1>
+
+    <p>
+        Click on the book name to know
+        author's name :
+    </p>
+
+    <ul>
+        <li onclick="showDetails(this)" data-book-author="Rabindra Nath Tagore">
+            Gitanjali
+        </li>
+        <li onclick="showDetails(this)" data-book-author="Mahatma Gandhi">
+            Conquest of Self
+        </li>
+        <li onclick="showDetails(this)" data-book-author="Sarojini Naidu">
+            Broken Wings
+        </li>
+    </ul>
+    <h2>paragraph</h2>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam harum nostrum sed dolores quaerat excepturi porro ab similique labore perspiciatis, aspernatur, doloribus soluta temporibus voluptates sapiente velit. Voluptates, distinctio voluptatem?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In reprehenderit facere temporibus porro voluptas similique consectetur obcaecati sint, cum voluptate sunt sit, maxime odit. Repellat quaerat ratione sint necessitatibus excepturi.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio quisquam officia id modi dolorem quod, quo consequuntur sunt amet, perspiciatis nobis quaerat illum porro eligendi quam veniam, ab quibusdam molestias.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum odit doloremque eveniet! Quis repellendus explicabo autem sequi nostrum, omnis eveniet, tempora voluptatem, dicta unde nobis ab cupiditate incidunt ipsum! Tenetur?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente cumque atque quas ipsam, esse saepe. Nemo dolorum tempora laboriosam voluptate commodi necessitatibus similique, ad quasi sint, voluptatibus explicabo ullam expedita.</p>
+    <h2>images</h2>
+    <img src="image.jpg" alt="nature" width="500" height="600">
+    <img src="image.jpg" alt="nature" width="500" height="600">
+    <h2></h2>
+
+</body>
+</html>
+
+

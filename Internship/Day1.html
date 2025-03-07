@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <a href="post.html">post form</a>
+    <a href="image.html">Images</a>
+    <style>
+        
+    body {
+        font-family: Arial, sans-serif;
+        background-color: aliceblue;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+    }
+    form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0056b3;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    button:hover {
+        background-color: #003580;
+    }
+    </style>
+</head>
+<body>
+
+   
+    <h2>GET Form</h2>
+    <form id="getForm" method="GET">
+        <label for="getUsername">Username:</label>
+        <input type="text" id="getUsername" name="username" placeholder="Enter username" required>
+        
+        <label for="getEmail">Email:</label>
+        <input type="email" id="getEmail" name="email" placeholder="Enter email" required>
+        
+        <label for="getPassword">Password:</label>
+        <input type="password" id="getPassword" name="password" placeholder="Enter password" required>
+        
+        <label for="getPhoneNumber">Phone Number:</label>
+        <input type="number" id="getPhoneNumber" name="phonenumber" placeholder="Enter phone number" required>
+        
+        <button type="submit">Submit GET Form</button>
+    </form>
+    <script>
+        // Simple Validation Function
+        function validateForm(formId) {
+            const form = document.getElementById(formId);
+            const username = form.querySelector('[name="username"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const password = form.querySelector('[name="password"]').value.trim();
+            const phoneNumber = form.querySelector('[name="phonenumber"]').value.trim();
+
+            // Username must be at least 3 characters
+            if (username.length < 3) {
+                alert("Username must be at least 3 characters long.");
+                return false;
+            }
+
+            // Basic Email Validation
+            if (!email.includes("@") || !email.includes(".")) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Password must be at least 6 characters
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            // Phone Number Validation (Starts with 98 or 97 and 10 digits)
+            if (!phoneNumber.startsWith("98") && !phoneNumber.startsWith("97")) {
+                alert("Phone number must start with 98/97.");
+                return false;
+            }
+            if (phoneNumber.length !== 10 && phoneNumber.length !== 7)  {
+                alert("Phone number must be 10 or 7 digit.");
+                return false;
+            }
+
+            return true;
+        }
+
+        // Attach Event Listener
+        document.getElementById("getForm").addEventListener("submit", function(event) {
+            if (!validateForm("getForm")) {
+                event.preventDefault();
+            }
+        });
+
+    </script>
+    
+
+          
+    
+</body>
+</html>
+
+   
